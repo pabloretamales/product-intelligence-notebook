@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-source-sans), "Source Sans 3", sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --color-paper: #f4efe4;
+  --color-ink: #1c1612;
+  --color-muted: #5e574e;
+  --color-line: #e0d5c3;
+  --color-stamp: #8c3a1e;
+  --color-moss: #1d4f48;
+  --color-card: #fbf7f0;
+}
+
+html {
+  background: var(--color-paper);
+}
+
+body {
+  background:
+    linear-gradient(90deg, rgba(140, 58, 30, 0.14), rgba(140, 58, 30, 0.14)) 0 0 /
+      3px 100% no-repeat,
+    var(--color-paper);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: #e7cbb8;
+  color: #1c1612;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-moss);
+  outline-offset: 3px;
+}
+
+.markdown {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-ink);
+}
+
+.markdown > * + * {
+  margin-top: 0.9rem;
+}
+
+.markdown h2 {
+  margin-top: 2.4rem;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.markdown h3 {
+  margin-top: 1.8rem;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.28rem;
+  font-weight: 560;
+  line-height: 1.3;
+}
+
+.markdown h4 {
+  margin-top: 1.4rem;
+  font-size: 1.02rem;
+  font-weight: 650;
+}
+
+.markdown p,
+.markdown li {
+  max-width: 68ch;
+}
+
+.markdown ul,
+.markdown ol {
+  padding-left: 1.25rem;
+}
+
+.markdown ul {
+  list-style: disc;
+}
+
+.markdown ol {
+  list-style: decimal;
+}
+
+.markdown li + li {
+  margin-top: 0.3rem;
+}
+
+.markdown a {
+  color: var(--color-moss);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.markdown strong {
+  font-weight: 650;
+}
+
+.markdown code {
+  border-radius: 0.25rem;
+  background: rgba(28, 22, 18, 0.06);
+  padding: 0.1em 0.35em;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.86em;
+}
+
+.markdown hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-top: 1rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-card);
+}
+
+.markdown table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.markdown th,
+.markdown td {
+  border-bottom: 1px solid var(--color-line);
+  padding: 0.5rem 0.7rem;
+  vertical-align: top;
+  text-align: left;
+}
+
+.markdown th {
+  background: #f3eadc;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.markdown tr:last-child td {
+  border-bottom: 0;
+}
+
+.markdown td p,
+.markdown th p {
+  max-width: none;
+}
